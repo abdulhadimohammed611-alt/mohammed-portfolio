@@ -1,0 +1,138 @@
+/* ============================================
+   DESIGN TOKENS — Global CSS Variables
+   ============================================ */
+:root {
+  /* Colors */
+  --color-bg-primary: #080c14;
+  --color-bg-secondary: #0d1424;
+  --color-bg-card: #111827;
+  --color-border: rgba(255, 255, 255, 0.06);
+
+  --color-text-primary: #f0f4ff;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+
+  --color-accent-blue: #3b82f6;
+  --color-accent-blue-light: #60a5fa;
+  --color-accent-violet: #8b5cf6;
+  --color-accent-violet-light: #a78bfa;
+
+  --gradient-hero: linear-gradient(
+    135deg,
+    var(--color-accent-blue) 0%,
+    var(--color-accent-violet) 100%
+  );
+  --gradient-text: linear-gradient(
+    135deg,
+    var(--color-accent-blue-light) 0%,
+    var(--color-accent-violet-light) 100%
+  );
+  --gradient-glow-blue: radial-gradient(
+    circle at 30% 30%,
+    rgba(59, 130, 246, 0.15) 0%,
+    transparent 60%
+  );
+  --gradient-glow-violet: radial-gradient(
+    circle at 70% 70%,
+    rgba(139, 92, 246, 0.12) 0%,
+    transparent 60%
+  );
+
+  /* Typography */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-blue);
+  border-radius: var(--radius-full);
+}

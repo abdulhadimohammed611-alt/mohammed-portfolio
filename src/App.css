@@ -1,0 +1,5 @@
+/* App.css — Component-level styles not covered by index.css */
+
+#main-content {
+  padding-top: 0; /* Navbar is fixed; Hero compensates with its own top padding */
+}
