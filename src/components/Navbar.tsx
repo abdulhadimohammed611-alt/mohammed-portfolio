@@ -21,7 +21,9 @@ const Navbar = () => {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`} role="banner">
       <nav className={styles.nav} aria-label="Main navigation">
         <div className={styles.logo} aria-label="Mohammed Abdulhadi — home">
-          <span className={styles.logoLetters}>MA</span>
+          <div className={styles.logoMark}>
+            <span className={styles.logoLetters}>MA</span>
+          </div>
           <span className={styles.logoDot} aria-hidden="true" />
         </div>
 

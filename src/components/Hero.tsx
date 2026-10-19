@@ -39,6 +39,9 @@ const Hero = () => {
           and crafting interfaces that people enjoy using.
         </p>
 
+        {/* Divider accent */}
+        <div className={styles.divider} aria-hidden="true" />
+
         {/* CTA Buttons */}
         <div className={styles.actions}>
           <button
