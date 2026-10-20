@@ -26,7 +26,7 @@
   inset: 0;
   background: radial-gradient(
     ellipse 50% 50% at 50% 0%,
-    rgba(59, 130, 246, 0.06) 0%,
+    var(--color-accent-dimmer) 0%,
     transparent 70%
   );
   pointer-events: none;
@@ -35,19 +35,15 @@
 .card.violet::before {
   background: radial-gradient(
     ellipse 50% 50% at 50% 0%,
-    rgba(139, 92, 246, 0.06) 0%,
+    var(--color-accent-dimmer) 0%,
     transparent 70%
   );
 }
 
-.card:hover {
-  border-color: rgba(59, 130, 246, 0.2);
-  box-shadow: 0 8px 40px rgba(59, 130, 246, 0.08);
-}
-
+.card:hover,
 .card.violet:hover {
-  border-color: rgba(139, 92, 246, 0.2);
-  box-shadow: 0 8px 40px rgba(139, 92, 246, 0.08);
+  border-color: var(--color-border-hover);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 .icon {
@@ -57,15 +53,15 @@
   width: 60px;
   height: 60px;
   border-radius: var(--radius-md);
-  background: rgba(59, 130, 246, 0.1);
-  color: var(--color-accent-blue-light);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  background: var(--color-accent-dimmer);
+  color: var(--color-accent-light);
+  border: 1px solid var(--color-border);
 }
 
 .violet .icon {
-  background: rgba(139, 92, 246, 0.1);
-  color: var(--color-accent-violet-light);
-  border-color: rgba(139, 92, 246, 0.2);
+  background: var(--color-accent-dimmer);
+  color: var(--color-accent-light);
+  border-color: var(--color-border);
 }
 
 .title {
@@ -86,20 +82,20 @@
 .pill {
   display: inline-flex;
   padding: 0.35rem 0.875rem;
-  background: rgba(59, 130, 246, 0.08);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  background: var(--color-accent-dimmer);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-accent-blue-light);
+  color: var(--color-accent-light);
 }
 
 .violet .pill {
-  background: rgba(139, 92, 246, 0.08);
-  border-color: rgba(139, 92, 246, 0.2);
-  color: var(--color-accent-violet-light);
+  background: var(--color-accent-dimmer);
+  border-color: var(--color-border);
+  color: var(--color-accent-light);
 }
 
 @media (max-width: 640px) {

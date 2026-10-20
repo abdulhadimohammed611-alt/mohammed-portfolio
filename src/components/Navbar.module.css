@@ -16,12 +16,12 @@
 }
 
 .header.scrolled {
-  background: rgba(7, 11, 19, 0.82);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background: var(--color-bg-primary-translucent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.06),
-    0 4px 32px rgba(0, 0, 0, 0.5);
+    0 1px 0 var(--color-border),
+    0 4px 20px rgba(0, 0, 0, 0.4);
   padding: 0.9rem 2rem;
 }
 
@@ -51,8 +51,8 @@
   width: 38px;
   height: 38px;
   border-radius: var(--radius-sm);
-  background: rgba(59, 130, 246, 0.09);
-  border: 1px solid rgba(59, 130, 246, 0.22);
+  background: var(--color-accent-dimmer);
+  border: 1px solid var(--color-accent-border);
   transition:
     background var(--transition-fast),
     border-color var(--transition-fast),
@@ -60,23 +60,23 @@
   overflow: hidden;
 }
 
-/* Gradient shimmer on logoMark hover */
+/* Subtle accent shimmer on logoMark hover */
 .logoMark::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--gradient-hero);
+  background: var(--color-accent);
   opacity: 0;
   transition: opacity var(--transition-base);
 }
 
 .logo:hover .logoMark {
-  border-color: rgba(59, 130, 246, 0.5);
-  box-shadow: 0 0 18px rgba(59, 130, 246, 0.22);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 12px var(--color-accent-dim);
 }
 
 .logo:hover .logoMark::before {
-  opacity: 0.12;
+  opacity: 0.08;
 }
 
 .logoLetters {
@@ -93,23 +93,22 @@
   line-height: 1;
 }
 
-/* Dot indicator kept but repositioned outside the box */
+/* Dot indicator */
 .logoDot {
   width: 5px;
   height: 5px;
-  background: var(--color-accent-blue);
+  background: var(--color-accent);
   border-radius: 50%;
   position: absolute;
   bottom: -2px;
   right: -2px;
-  box-shadow: 0 0 6px var(--color-accent-blue);
 }
 
 /* ── Desktop nav links ── */
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 0.125rem;
+  gap: 0.25rem;
   list-style: none;
 }
 
@@ -134,7 +133,7 @@
   left: 0.9rem;
   right: 0.9rem;
   height: 1.5px;
-  background: var(--gradient-text);
+  background: var(--color-accent);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform var(--transition-fast);
@@ -143,7 +142,7 @@
 
 .navLink:hover {
   color: var(--color-text-primary);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(148, 163, 184, 0.08);
 }
 
 .navLink:hover::after {
@@ -151,15 +150,15 @@
 }
 
 .navLink:focus-visible {
-  outline: 2px solid var(--color-accent-blue-light);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
 /* CTA pill nav item */
 .navLinkCta {
-  color: var(--color-accent-blue-light);
-  border: 1px solid rgba(59, 130, 246, 0.28);
-  background: rgba(59, 130, 246, 0.07);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
   padding: 0.5rem 1.125rem;
   font-weight: 600;
   transition:
@@ -175,10 +174,10 @@
 }
 
 .navLinkCta:hover {
-  background: rgba(59, 130, 246, 0.14);
-  border-color: rgba(59, 130, 246, 0.55);
-  color: var(--color-accent-blue-light);
-  box-shadow: 0 0 16px rgba(59, 130, 246, 0.18);
+  background: var(--color-accent);
+  border-color: var(--color-accent-hover);
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(100, 135, 184, 0.25);
   transform: translateY(-1px);
 }
 
@@ -193,7 +192,7 @@
 }
 
 .hamburger:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(148, 163, 184, 0.08);
 }
 
 .hamburger span {
@@ -214,7 +213,7 @@
 
 .hamburgerOpen span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
-  background: var(--color-accent-blue-light);
+  background: var(--color-accent-light);
 }
 .hamburgerOpen span:nth-child(2) {
   opacity: 0;
@@ -222,7 +221,7 @@
 }
 .hamburgerOpen span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
-  background: var(--color-accent-blue-light);
+  background: var(--color-accent-light);
 }
 
 /* ── Mobile menu ── */
@@ -241,8 +240,12 @@
 
 .mobileMenuOpen {
   max-height: 320px;
-  padding: 0.625rem 1rem 1.125rem;
-  border-top-color: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1rem 1.125rem;
+  border-top-color: var(--color-border);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-md);
+  margin-top: 0.5rem;
+  border: 1px solid var(--color-border);
 }
 
 .mobileLink {
@@ -260,11 +263,11 @@
 
 .mobileLink:hover {
   color: var(--color-text-primary);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(148, 163, 184, 0.08);
 }
 
 .mobileLink:focus-visible {
-  outline: 2px solid var(--color-accent-blue-light);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 

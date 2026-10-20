@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import About from './components/About';
 import PlaceholderSection from './components/PlaceholderSection';
 import Footer from './components/Footer';
 
@@ -12,20 +13,15 @@ function App() {
       <main id="main-content">
         <Hero />
 
+        {/* About section */}
+        <About />
+
         {/* Journey placeholder — replace with real content in future session */}
         <PlaceholderSection
           id="journey"
           title="My Journey"
           subtitle="Timelines, projects, and milestones — this section is being crafted and will be available soon."
           accentColor="blue"
-        />
-
-        {/* About placeholder */}
-        <PlaceholderSection
-          id="about"
-          title="About Me"
-          subtitle="A deeper look into who I am, what drives me, and the things I care about. Coming soon."
-          accentColor="violet"
         />
 
         {/* Contact placeholder */}

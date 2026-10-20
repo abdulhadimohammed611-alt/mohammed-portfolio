@@ -16,9 +16,9 @@
   background: linear-gradient(
     to right,
     transparent,
-    var(--color-border) 30%,
-    rgba(59, 130, 246, 0.2) 50%,
-    var(--color-border) 70%,
+    var(--color-border) 25%,
+    var(--color-border-hover) 50%,
+    var(--color-border) 75%,
     transparent
   );
 }
@@ -40,7 +40,7 @@
 
 .copy {
   font-size: 0.825rem;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
 }
 
 @media (max-width: 480px) {
